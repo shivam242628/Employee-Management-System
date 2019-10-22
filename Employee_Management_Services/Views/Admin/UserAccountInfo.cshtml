@@ -1,0 +1,95 @@
+﻿@model DataObjects.Admin
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/EMS_StyleSheet.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+     $(document).ready(function () {
+        $(".viewbtn1").hide();
+        var x = '@ViewBag.OrgID';
+        if (x != "0") {
+
+        }
+        else {
+            $(".viewbtn1").show();
+        }
+    })
+
+    $(document).ready(function () {
+        $(".viewbtn2").hide();
+        var x = '@ViewBag.OrgID';
+        if (x != "0") {
+            $(".viewbtn2").show();
+        }
+        else {
+
+        }
+    })
+</script>
+
+<body id="general">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+        <div class="container">
+            <div class="navbar-header">
+
+                @Html.ActionLink("ORION EMS TECHNOLOGIES", "Index", "Admin", new { area = "", userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @class = "navbar-brand", @style = "color:white;" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="nav navbar-nav">
+
+
+                    <a href="/Admin/UserAccountInfo?id=@Session["AdminSecurity"]&organisationID=@Session["Organisation"]" class="userdetails  btn "><span class="glyphicon glyphicon-user"></span></a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="details">
+        <h3><b>Welcome @Session["AdminSecurity"]!</b></h3>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                <b>ORGANISATION ID:</b>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OrganisationID)
+            </dd>
+
+            <dt>
+                <b>ADMIN Username:</b>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Admin_User_Name)
+            </dd>
+
+            <dt>
+                <b>ORGANISATION NAME:</b>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OrganisationName)
+            </dd>
+
+            <dt>
+                <b>ADDRESS:</b>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OrganisationAddress)
+            </dd>
+        </dl>
+        <p>
+            @Html.ActionLink("Back to Organisations", "ViewOrganisations", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @class = "btn btn-info viewbtn viewbtn1" })
+            @Html.ActionLink("Back to List", "Index", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @class = "btn btn-info viewbtn viewbtn2" })
+            @Html.ActionLink("Change Password", "ChangePassword", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @class = "btn btn-info viewbtn" })
+            @Html.ActionLink("Logout", "SignOut", "Admin", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @class = "btn btn-info viewbtn" })
+        </p>
+    </div>
+</body>
+
+

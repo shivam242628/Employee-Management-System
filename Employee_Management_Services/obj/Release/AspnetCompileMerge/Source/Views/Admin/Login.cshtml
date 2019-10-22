@@ -1,0 +1,69 @@
+﻿
+@model Employee_Management_Services.Models.Admin
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<link href="~/Content/Login_Admin.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                
+            </button>
+            @Html.ActionLink("Employee Management System", "Index", "Employee", new { area = "" }, new { @class = "navbar-brand", @style = "color:white;" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"></ul>
+
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm("Login", "Admin"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h3>Admin Login Details</h3>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+
+            <div class="col-md-10, empinput">
+                @Html.EditorFor(model => model.Admin_User_Name, new { htmlAttributes = new { @id = "passinput", @placeholder = "Admin UserName" } })
+                @Html.ValidationMessageFor(model => model.Admin_User_Name, "", new { @class = "text-danger" })
+            </div>
+
+
+
+
+
+
+            <div class="col-md-10, empinput ,button">
+                <input type="password" name="password" id="passinput" placeholder="Password" />
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                <input type="submit" value="LOGIN" id="button" />
+
+                @Html.ValidationSummary(true, "LOGIN FAILED: Wrong UserName or Password", new { @class = "errormsg" })
+
+                <p><a href="/Home/Login">LOGIN AS EMPLOYEE</a></p>
+            </div>
+
+
+
+            <div class="col-md-offset-2 col-md-10, button">
+
+            </div>
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,80 @@
+﻿.form-horizontal {
+    width: 360px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-horizontal {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 100px 100px;
+    left: 280px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form empinput, #passinput {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+
+a:hover {
+    text-decoration: none;
+}
+
+#button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2980b9;
+    margin: 0 0 15px;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0 ease;
+    transition: all ease;
+    cursor: pointer;
+}
+
+    #button:hover, .form button:active, .form button:focus {
+        background: #43A047;
+    }
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+    .form .message a {
+        color: #4CAF50;
+        text-decoration: none;
+    }
+
+.form .register-form {
+    display: none;
+}
+
+body {
+    background-color: lightgrey;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.errormsg {
+    color: red;
+}

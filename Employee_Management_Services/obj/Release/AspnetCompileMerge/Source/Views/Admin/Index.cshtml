@@ -1,0 +1,543 @@
+﻿@model Employee_Management_Services.Models.EmployeePagedModel
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+</head>
+
+
+<style>
+    body {
+    background-color: ghostwhite;
+}
+
+table {
+    background-color: #fff;
+    background: darkslategrey;
+    color: #161616;
+    text-align: left;
+    vertical-align: central;
+    position: relative;
+    bottom: 130px;
+}
+
+th {
+    background: #2980b9;
+}
+
+    th a {
+        color: #fff;
+    }
+
+tr {
+    background: #fff;
+    font-size: 13px;
+}
+
+.table td a:hover{
+        color: blue !important;
+        text-decoration: none !important;
+    }
+
+.dltbtn {
+    background: #2980b9;
+    position: relative;
+    left: 1000px;
+    bottom: 104px;
+}
+
+.addbtn {
+    background: #2980b9;
+    position: relative;
+    bottom: 158px;
+    left: 861px;
+}
+
+.viewbtn {
+    background: #2980b9;
+    /*border-radius: 15px;*/
+    position: relative;
+    left: 735px;
+    bottom: 70px;
+}
+
+
+
+.filter {
+    position: relative;
+    left: 400px;
+    bottom: 56px;
+}
+
+.optionbtn {
+    background: white;
+    color: black;
+    border: none;
+    /*border-radius: 15px;*/
+    position: relative;
+    left: 16px;
+}
+
+.searchbar {
+    position: relative;
+    top: 30px;
+}
+
+.pages {
+    position: relative;
+    bottom: 80px;
+}
+
+.table-hover tbody tr:hover td {
+    background-color: lightgrey;
+}
+
+.table-hover tbody tr:hover th {
+    background-color: #2980b9;
+}
+
+.table-hover tbody tr:hover a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.submitbtn {
+    background: #2980b9;
+    /*border-radius: 15px;*/
+    position: relative;
+    border: none;
+    bottom: 34px;
+    left: 290px;
+}
+
+select::-ms-expand { /*To remove the arrow from the drop down of edit , delete and details*/
+    display: none;
+}
+
+.userdetails {
+    position: relative;
+    left: 780px;
+    border-radius: 20px;
+    top: 10px;
+    background: white;
+}
+
+.pagination {
+    display: inline-block;
+    position: relative;
+    bottom: 110px;
+}
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 6px 10px;
+        margin: 2px;
+        text-decoration: none;
+        transition: background-color .3s;
+        border: 1px solid #ddd;
+    }
+
+        .pagination a.active {
+            background-color: #2980b9;
+            color: white;
+            border: 1px solid lavender;
+            /*border-radius: 20px;*/
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+.dbtn a:hover {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.label1 {
+    position: relative;
+    right: 230px;
+    top: 30px;
+}
+
+.label2 {
+    position: relative;
+    right: 200px;
+    top: 30px;
+}
+
+</style>
+
+<script>
+
+    $(document).ready(function () {
+        $("#viewall").hide();
+        var x = '@ViewBag.viewall';
+        if (x == "no") {
+
+        }
+        else {
+            $("#viewall").show();
+        }
+    })
+
+    $(document).ready(function () {
+        var x = document.getElementById("departmentlabel").innerText;
+        var y = document.getElementById("genderlabel").innerText;
+        if (x == "") {
+            $("#cleardepartment").hide();
+        }
+        if (y == "") {
+            $("#cleargender").hide();
+        }
+    })
+
+
+    function genderfunc() {
+        var x = document.getElementById("Genderselect").value;
+        document.getElementById("genderlabel").innerText = x;
+        document.getElementById("department").value = document.getElementById("departmentlabel").innerText;
+        document.getElementById("gender").value = document.getElementById("genderlabel").innerText;
+        $("#filterform").submit();
+    }
+
+
+    function departmentfunc() {
+        var x = document.getElementById("Departmentselect").value;
+        document.getElementById("departmentlabel").innerText = x;
+        document.getElementById("department").value = document.getElementById("departmentlabel").innerText;
+        document.getElementById("gender").value = document.getElementById("genderlabel").innerText;
+        $("#filterform").submit();
+    }
+
+    function selectAll(source) {
+        checkboxes = document.getElementsByName('boxes[]');
+
+        for (var i in checkboxes) {
+            checkboxes[i].checked = source.checked;
+
+        }
+
+    }
+
+    $(document).ready(function () {
+        $("#delete").click(function () {
+            var selectedIDs = new Array();
+            $('input:checkbox.checkBox').each(function () {
+                if ($(this).prop('checked')) {
+                    selectedIDs.push($(this).val());
+                }
+            });
+
+            var options = {};
+            options.url = "/Admin/Delete";
+            options.type = "POST";
+            options.data = JSON.stringify(selectedIDs);
+            options.contentType = "application/json";
+            options.dataType = "json";
+            options.success = function (msg) {
+                alert(msg);
+            };
+
+            $.ajax(options);
+
+        });
+    });
+
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
+    $(document).ready(function () {
+        $(".fa1").hide();
+
+        var x = '@TempData["sorting"]';
+        if (x == "") {
+            $("#eidasc").show();
+        }
+        if (x == "eid") {
+            $("#eidasc").show();
+        }
+        if (x == "eid_desc") {
+            $("#eiddesc").show();
+        }
+        if (x == "name") {
+            $("#nameasc").show();
+        }
+        if (x == "name_desc") {
+            $("#namedesc").show();
+        }
+        if (x == "Date") {
+            $("#dobasc").show();
+        }
+        if (x == "date_desc") {
+            $("#dobdesc").show();
+        }
+        if (x == "gender") {
+            $("#genderasc").show();
+        }
+        if (x == "gender_desc") {
+            $("#genderdesc").show();
+        }
+        if (x == "JoinDate") {
+            $("#joiningasc").show();
+        }
+        if (x == "join_data_desc") {
+            $("#joiningdesc").show();
+        }
+        if (x == "dept") {
+            $("#deptasc").show();
+        }
+        if (x == "dept_desc") {
+            $("#deptdesc").show();
+        }
+        if (x == "email") {
+            $("#emailasc").show();
+        }
+        if (x == "email_desc") {
+            $("#emaildesc").show();
+        }
+        if (x == "contact") {
+            $("#contactasc").show();
+        }
+        if (x == "contact_desc") {
+            $("#contactdesc").show();
+        }
+    })
+
+    function PagerClick(pageNumber) {
+        var sortorder = '@TempData["sorting"]';
+        var genderSelectedValue = '@TempData["genderfilter"]';
+
+        var searchstring = '@TempData["searchstring"]';
+
+
+        var DepartmentSelectedValue = '@TempData["departmentfilter"]';
+        if (genderSelectedValue == "undefined")
+            genderSelectedValue = "";
+        if (DepartmentSelectedValue == "undefined")
+            DepartmentSelectedValue = "";
+        var string_url = "http://localhost:61130/Admin/Index/?page=" + pageNumber + "&searchString=" + searchstring + "&sortOrder=" + sortorder + "&departmentfilter=" + DepartmentSelectedValue + "&genderfilter=" + genderSelectedValue;
+        window.location = string_url;
+    }
+</script>
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+    <div class="container">
+        <div class="navbar-header">
+
+            @Html.ActionLink("Employee Management System", "Index", "Admin", new { area = "", id = Session["AdminSecurity"] }, new { @class = "navbar-brand", @style = "color:white;" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <div class="nav navbar-nav">
+
+                @*<button class="userdetails  btn glyphicon-user  fa fa-user">@Html.ActionLink("   Manage Account", "UserAccountInfo", "Admin", new { id = TempData["empid"] }, null)</button>*@
+                <a href="/Admin/UserAccountInfo/@Session["AdminSecurity"]" id=TempData["empid"]  class="userdetails  btn "><span class="glyphicon glyphicon-user"></span></a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<form method="get" action="/Admin/Index" class="searchbar">
+    <input type="text" name="searchString" placeholder="Search..." class="form-control" required />
+    <input type="submit" class="submitbtn btn btn-info " value="Search" />
+</form>
+
+<br />
+<div class="filter">
+    <form style="display:none" action="/Admin/Index" method="post" id="filterform">
+        <input type="hidden" name="searchString" id="searchString" value="@ViewBag.CurrentFilter" />
+        <input type="hidden" name="departmentfilter" id="department" value="" />
+        <input type="hidden" name="genderfilter" id="gender" value="" />
+    </form>
+
+    <select class="form-control " style="border:solid;border-width:2px;border-color:lightgrey;width:100px;border-radius:0px;display:inline-block" onchange="genderfunc();" id="Genderselect">
+        <option value="">Gender</option>
+        <option value="MALE">MALE</option>
+        <option value="FEMALE">FEMALE</option>
+    </select>
+
+    <select class="form-control" style="border:solid;border-width:2px;border-color:lightgrey;width:130px;border-radius:0px;display:inline-block" onchange="departmentfunc();" id="Departmentselect">
+        <option value="">Department</option>
+        <option value="TECHNICAL">TECHNICAL</option>
+        <option value="MARKETING">MARKETING</option>
+        <option value="SALES">SALES</option>
+        <option value="SUPPORT">SUPPORT</option>
+    </select>
+    &nbsp; &nbsp;
+    <label id="genderlabel" style="color:black;background-color:lavender" class="label1">@ViewBag.genderfilter</label>   <i style="color:black;background-color:lavender;position:relative;top:2px" id="cleargender" class="material-icons"></i>
+    &nbsp; &nbsp;
+    <label id="departmentlabel" style="color:black;background-color:lavender" class="label2">@ViewBag.departmentfilter</label>   <i style="color:black;background-color:lavender;position:relative;top:2px" id="cleardepartment" class="material-icons"></i><br />
+
+</div>
+
+
+
+
+<a href="/Admin/Index" id="viewall" class="btn btn-info viewbtn">
+    Remove Filters
+</a>
+<br />
+<a href="/Admin/Delete" class="btn btn-info dltbtn" id="delete">
+    <span class="glyphicon"></span> Delete Selected
+</a>
+<br />
+<br />
+<a href="/Admin/Create" , new { id=TempData["empid"] } class="btn btn-info addbtn">
+    <span class="glyphicon glyphicon-plus"></span> Add Employee
+</a>
+
+
+<br />
+<table class="table table-responsive table-hover table-bordered " id="myTable">
+    <tr style="color: #fff ">
+
+        <th>
+            <input type="checkbox" id="selectall" onClick="selectAll(this)" /><br>
+        </th>
+
+        <th>
+            @Html.ActionLink("EMPLOYEE ID", "Index", new { id = Session["AdminSecurity"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm0, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+            <i id="eidasc" class="fa fa1 fa-angle-down"></i>
+            <i id="eiddesc" class="fa fa1 fa-angle-up"></i>
+        </th>
+        <th>
+            @Html.ActionLink("NAME", "Index", new { id = Session["AdminSecurity"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm1, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+            <i id="nameasc" class="fa fa1 fa-angle-down"></i>
+            <i id="namedesc" class="fa fa1 fa-angle-up"></i>
+        </th>
+        <th>
+
+            @Html.ActionLink("DOB", "Index", new { id = Session["AdminSecurity"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.DateSortParm1, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+            <i id="dobasc" class="fa fa1 fa-angle-down"></i>
+            <i id="dobdesc" class="fa fa1 fa-angle-up"></i>
+        </th>
+        <th>
+            @Html.ActionLink("GENDER", "Index", new { id = Session["AdminSecurity"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm2, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+            <i id="genderasc" class="fa fa1 fa-angle-down"></i>
+            <i id="genderdesc" class="fa fa1 fa-angle-up"></i>
+        </th>
+        <th>
+            @Html.ActionLink("JOINING DATE", "Index", new { id = Session["AdminSecurity"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.DateSortParm2, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+            <i id="joiningasc" class="fa fa1 fa-angle-down"></i>
+            <i id="joiningdesc" class="fa fa1 fa-angle-up"></i>
+        </th>
+        <th>
+            @Html.ActionLink("DEPARTMENT", "Index", new { id = Session["AdminSecurity"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm3, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+            <i id="deptasc" class="fa fa1 fa-angle-down"></i>
+            <i id="deptdesc" class="fa fa1 fa-angle-up"></i>
+        </th>
+        <th>
+            @Html.ActionLink("EMAIL ID", "Index", new { id = Session["AdminSecurity"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm4, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+            <i id="emailasc" class="fa fa1 fa-angle-down"></i>
+            <i id="emaildesc" class="fa fa1 fa-angle-up"></i>
+        </th>
+        <th>
+            @Html.ActionLink("CONTACT", "Index", new { id = Session["AdminSecurity"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm5, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+            <i id="contactasc" class="fa fa1 fa-angle-down"></i>
+            <i id="contactdesc" class="fa fa1 fa-angle-up"></i>
+        </th>
+
+        <th>
+            OPTIONS
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model.Employees)
+    {
+
+        <tr >
+            <td>
+                <input type="checkbox" class="checkBox" name="boxes[]" value="@item.Employee_Id"><br>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Joining_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact_Number)
+            </td>
+
+            <td>
+
+
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle glyphicon glyphicon-cog optionbtn" type="button" data-toggle="dropdown"></button>
+                    <ul class="dropdown-menu">
+                        <li class="dbtn">@Html.ActionLink("Edit", "Edit", new { id = item.Employee_Id, username = Session["AdminSecurity"] })</li>
+                        <li class="dbtn">@Html.ActionLink("Details", "Details", new { id = item.Employee_Id, username = Session["AdminSecurity"] })</li>
+                        <li class="dbtn">@Html.ActionLink("Delete", "Delete", new { id = item.Employee_Id, username = Session["AdminSecurity"] })</li>
+                    </ul>
+                </div>
+            </td>
+
+        </tr>
+
+    }
+
+</table>
+
+<br />
+
+<div class="pagination">
+    @if (int.Parse(TempData["CurrentPage"].ToString()) > 1)
+    {
+        <a href="javascript:PagerClick(@TempData["CurrentPage"]-1);">&laquo;</a>
+    }
+    @for (int i = 1; i <= Model.PageCount; i++)
+    {
+        if (i != Model.PageNumber)
+        {
+            <a class="active" href="javascript:PagerClick(@i);">@i</a>
+        }
+        else
+        {
+            <span>@i</span>
+        }
+
+    }
+    @if (int.Parse((TempData["CurrentPage"]).ToString()) < Model.PageCount)
+    {
+        <a href="javascript:PagerClick(@TempData["CurrentPage"] + 1);">&raquo;</a>
+    }
+
+</div>

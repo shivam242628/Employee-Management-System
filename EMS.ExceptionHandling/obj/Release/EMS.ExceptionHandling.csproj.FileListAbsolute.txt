@@ -1,0 +1,5 @@
+D:\Employee_Management_Services\EMS.ExceptionHandling\bin\Release\EMS.ExceptionHandling.dll
+D:\Employee_Management_Services\EMS.ExceptionHandling\bin\Release\EMS.ExceptionHandling.pdb
+D:\Employee_Management_Services\EMS.ExceptionHandling\obj\Release\EMS.ExceptionHandling.dll
+D:\Employee_Management_Services\EMS.ExceptionHandling\obj\Release\EMS.ExceptionHandling.pdb
+D:\Employee_Management_Services\EMS.ExceptionHandling\obj\Release\EMS.ExceptionHandling.csprojResolveAssemblyReference.cache

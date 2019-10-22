@@ -1,0 +1,11 @@
+D:\Employee_Management_Services\EMS.ExceptionHandling\bin\Debug\EMS.ExceptionHandling.dll
+D:\Employee_Management_Services\EMS.ExceptionHandling\bin\Debug\EMS.ExceptionHandling.pdb
+D:\Employee_Management_Services\EMS.ExceptionHandling\obj\Debug\EMS.ExceptionHandling.dll
+D:\Employee_Management_Services\EMS.ExceptionHandling\obj\Debug\EMS.ExceptionHandling.pdb
+D:\Employee_Management_Services\EMS.ExceptionHandling\obj\Debug\EMS.ExceptionHandling.csprojResolveAssemblyReference.cache
+G:\LeadSquared\Employee_Management_Services\EMS.ExceptionHandling\bin\Debug\EMS.ExceptionHandling.dll
+G:\LeadSquared\Employee_Management_Services\EMS.ExceptionHandling\bin\Debug\EMS.ExceptionHandling.pdb
+G:\LeadSquared\Employee_Management_Services\EMS.ExceptionHandling\obj\Debug\EMS.ExceptionHandling.csprojAssemblyReference.cache
+G:\LeadSquared\Employee_Management_Services\EMS.ExceptionHandling\obj\Debug\EMS.ExceptionHandling.csproj.CoreCompileInputs.cache
+G:\LeadSquared\Employee_Management_Services\EMS.ExceptionHandling\obj\Debug\EMS.ExceptionHandling.dll
+G:\LeadSquared\Employee_Management_Services\EMS.ExceptionHandling\obj\Debug\EMS.ExceptionHandling.pdb

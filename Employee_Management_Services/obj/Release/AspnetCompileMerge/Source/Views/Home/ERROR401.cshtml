@@ -1,0 +1,74 @@
+﻿
+<style>
+    html, body{
+	margin: 0;
+	min-width: 100%;
+	min-height: 100%;
+	background: #505050;
+	font-family: Verdana;
+}
+
+.X{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 55px;
+	height: 250px;
+	background: red;
+	transform: translate(50%, 50%);
+}
+.X#X1{
+	transform: rotate(45deg);
+}
+.X#X2{
+	transform: rotate(-45deg);
+}
+
+.error-number{
+	position: absolute;
+	line-height: 80px;
+	top: 85px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 80px;
+	height: 80px;
+	color: white;
+	font-size: 30px;
+	text-align: center;
+	font-weight: bold;
+	background: rgba(0,0,0,0.4);
+	border-radius: 100px;
+}
+
+.error-info{
+	position: absolute;
+	top: 300px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 300px;
+	color: white;
+	font-size: 22px;
+	text-align: center;
+}
+    </style>
+
+
+
+<div class="container">
+    <div id="X1" class="X">
+    </div>
+    <div id="X2" class="X">
+    </div>
+    <div class="error-number">
+        401
+    </div>
+    <div class="error-info">
+        You are not authorized to view this page
+    </div>
+
+</div>

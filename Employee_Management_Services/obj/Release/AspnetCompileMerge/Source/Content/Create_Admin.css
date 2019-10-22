@@ -1,0 +1,36 @@
+﻿.userdetails {
+    position: relative;
+    left: 780px;
+    border-radius: 20px;
+    top: 10px;
+    background: white;
+}
+
+.dropdown1 {
+    min-width: 278px;
+}
+
+
+
+.errormsg {
+    color: red;
+}
+
+.submitbtn {
+    background: #2980b9;
+}
+
+    .submitbtn a {
+        color: white;
+    }
+
+        .submitbtn a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+.back {
+    position: relative;
+    left: 270px;
+    bottom: 49px;
+}

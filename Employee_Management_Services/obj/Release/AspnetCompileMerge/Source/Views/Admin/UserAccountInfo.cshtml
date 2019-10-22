@@ -1,0 +1,35 @@
+﻿@model Employee_Management_Services.Models.Admin
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/Content/UserAccountInfo_Admin.css" rel="stylesheet" type="text/css" />
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+    <div class="container">
+        <div class="navbar-header">
+            
+            @Html.ActionLink("Employee Management System", "Index", "Admin", new { area = "" , id = Session["AdminSecurity"] }, new { @class = "navbar-brand", @style = "color:white;" })
+        </div>
+        <div class="navbar-collapse collapse">
+                 <a href="/Admin/UserAccountInfo/@Session["AdminSecurity"]"  class="userdetails  btn "><span class="glyphicon glyphicon-user"></span></a>
+
+            
+        </div>
+    </div>
+</div>
+<div class="details">
+    <h3><b>Welcome ADMIN!</b></h3>
+    <hr />
+
+    <p>
+
+        <button class="btn btn-info  viewbtn ">@Html.ActionLink("Back to List", "Index", new { id = Session["AdminSecurity"] })</button>
+        <button class="btn btn-info  viewbtn ">@Html.ActionLink("Change Password", "ChangePassword")</button>
+        <button class="btn btn-info  viewbtn ">@Html.ActionLink("Logout", "SignOut","Admin")</button>
+    </p>
+</div>
+
+

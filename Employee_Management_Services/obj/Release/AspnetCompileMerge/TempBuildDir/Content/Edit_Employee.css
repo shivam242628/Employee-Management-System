@@ -1,0 +1,37 @@
+﻿.userdetails {
+    position: relative;
+    left: 780px;
+    border-radius: 20px;
+    top: 10px;
+    background: white;
+}
+
+.viewbtn {
+    background: #2980b9;
+    position: relative;
+    left: 190px;
+    bottom: 20px;
+}
+
+    .viewbtn a {
+        color: white;
+    }
+
+        .viewbtn a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+.mbtn {
+    position: relative;
+    right: 68px;
+    top: 29px;
+}
+
+.submitbtn {
+    background: #2980b9;
+}
+
+.dropdown1 {
+    min-width: 278px;
+}

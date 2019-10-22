@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.Application", "Employee_Management_Services\EMS.Application.csproj", "{5F8801A1-D349-48D2-A9B1-C087277BACCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.DataObjects", "ModelLayer\EMS.DataObjects.csproj", "{9DEF9DCA-F799-4F3D-B941-EFDC8A5D77B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.DataAccess", "OperationLayer\EMS.DataAccess.csproj", "{B3A6CF7A-1336-4732-8C95-956A0AE20B2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.WebAPI", "WebApiLayer\EMS.WebAPI.csproj", "{B29983A6-4DCD-4969-9DD2-72E74343B90D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.Business", "EMS.DataAccess\EMS.Business.csproj", "{2E5CE697-8D12-44A9-B6C8-EC6FACD8CDCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.ExceptionHandling", "EMS.ExceptionHandling\EMS.ExceptionHandling.csproj", "{BEAAD71B-1346-4852-B1A5-6117674567A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F8801A1-D349-48D2-A9B1-C087277BACCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F8801A1-D349-48D2-A9B1-C087277BACCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F8801A1-D349-48D2-A9B1-C087277BACCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F8801A1-D349-48D2-A9B1-C087277BACCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DEF9DCA-F799-4F3D-B941-EFDC8A5D77B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DEF9DCA-F799-4F3D-B941-EFDC8A5D77B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DEF9DCA-F799-4F3D-B941-EFDC8A5D77B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DEF9DCA-F799-4F3D-B941-EFDC8A5D77B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A6CF7A-1336-4732-8C95-956A0AE20B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A6CF7A-1336-4732-8C95-956A0AE20B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A6CF7A-1336-4732-8C95-956A0AE20B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A6CF7A-1336-4732-8C95-956A0AE20B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B29983A6-4DCD-4969-9DD2-72E74343B90D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B29983A6-4DCD-4969-9DD2-72E74343B90D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B29983A6-4DCD-4969-9DD2-72E74343B90D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B29983A6-4DCD-4969-9DD2-72E74343B90D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E5CE697-8D12-44A9-B6C8-EC6FACD8CDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E5CE697-8D12-44A9-B6C8-EC6FACD8CDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E5CE697-8D12-44A9-B6C8-EC6FACD8CDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E5CE697-8D12-44A9-B6C8-EC6FACD8CDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEAAD71B-1346-4852-B1A5-6117674567A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEAAD71B-1346-4852-B1A5-6117674567A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEAAD71B-1346-4852-B1A5-6117674567A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEAAD71B-1346-4852-B1A5-6117674567A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

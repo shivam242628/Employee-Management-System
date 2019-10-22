@@ -1,0 +1,11 @@
+D:\Employee_Management_Services\OperationLayer\bin\Debug\OperationLayer.dll
+D:\Employee_Management_Services\OperationLayer\bin\Debug\OperationLayer.pdb
+D:\Employee_Management_Services\OperationLayer\bin\Debug\log4net.dll
+D:\Employee_Management_Services\OperationLayer\bin\Debug\ModelLayer.dll
+D:\Employee_Management_Services\OperationLayer\bin\Debug\MySql.Data.dll
+D:\Employee_Management_Services\OperationLayer\bin\Debug\ModelLayer.pdb
+D:\Employee_Management_Services\OperationLayer\bin\Debug\log4net.xml
+D:\Employee_Management_Services\OperationLayer\bin\Debug\MySql.Data.xml
+D:\Employee_Management_Services\OperationLayer\obj\Debug\EMS.Business.csprojResolveAssemblyReference.cache
+D:\Employee_Management_Services\OperationLayer\obj\Debug\OperationLayer.dll
+D:\Employee_Management_Services\OperationLayer\obj\Debug\OperationLayer.pdb

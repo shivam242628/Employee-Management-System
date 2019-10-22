@@ -1,0 +1,62 @@
+﻿@model DataObjects.Employee
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/EMS_StyleSheet.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Login";
+}
+
+<body id="general">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">   
+        <div class="container">       
+            <div class="navbar-header">
+                <img src="https://www.pexels.com/photo/attractive-beautiful-beautiful-girl-beauty-458766/" alt="" />
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("ORION EMS TECHNOLOGIES", "Index", "Employee", new { area = "" }, new { @class = "navbar-brand", @style = "color:white;" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+
+            </div>
+        </div>
+    </div>
+    @using (Html.BeginForm("Login", "Home"))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="loginpage">
+            <h3>Login Details</h3>
+            <hr />
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+
+                <div class="col-md-10, empinput">
+                    @Html.EditorFor(model => model.OrganisationId, new { htmlAttributes = new { @id = "passinput", @placeholder = "Organisation ID" } })
+                    @Html.ValidationMessageFor(model => model.OrganisationId, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-10, empinput">
+                    @Html.EditorFor(model => model.Employee_Id, new { htmlAttributes = new { @id = "passinput", @placeholder = "Employee ID" } })
+                    @Html.ValidationMessageFor(model => model.Employee_Id, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-10, empinput ,button">
+                    <input type="password" name="password" id="passinput" placeholder="Password" />
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    <input type="submit" value="LOGIN" id="button" />
+                    @Html.ValidationSummary(true, "LOGIN FAILED: Wrong Employee ID or Password", new { @class = "errormsg" })
+                    <p><a href="/Admin/Login">LOGIN AS ADMINISTRATOR</a></p>
+                </div>
+                <div class="col-md-offset-2 col-md-10, button">
+                </div>
+            </div>
+        </div>
+
+    }
+</body>
+
+

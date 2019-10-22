@@ -1,0 +1,45 @@
+﻿@model Employee_Management_Services.Models.Employee
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/Content/Delete_Admin.css" rel="stylesheet" type="text/css" />
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+    <div class="container">
+        <div class="navbar-header">
+
+            @Html.ActionLink("Employee Management System", "Index", "Employee", new { area = "" }, new { @class = "navbar-brand", id = Session["AdminSecurity"], @style = "color:white;" })
+
+
+            <div class="nav navbar-nav">
+
+                <a href="/Admin/UserAccountInfo/@Session["AdminSecurity"] "  class="userdetails  btn "><span class="glyphicon glyphicon-user"></span></a>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="main">
+    <h4>All the details about the selected employee(s) will be lost forever. Do you still want to continue?</h4>
+    <div class="submain">
+
+        <hr />
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete Anyway!" class="btn btn-info submitbtn" />
+                <button class="submitbtn btn btn-info "  >@Html.ActionLink("Back to List", "Index")</button>
+            </div>
+        }
+    </div>
+</div>

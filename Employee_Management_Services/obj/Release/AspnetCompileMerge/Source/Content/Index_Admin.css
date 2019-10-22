@@ -1,0 +1,153 @@
+﻿body {
+    background-color: ghostwhite;
+}
+
+table {
+    background-color: #fff;
+    background: darkslategrey;
+    color: #161616;
+    text-align: left;
+    vertical-align: central;
+    position: relative;
+    bottom: 130px;
+}
+
+th {
+    background: #2980b9;
+}
+
+    th a {
+        color: #fff;
+    }
+
+tr {
+    background: #fff;
+    font-size: 13px;
+}
+
+.dltbtn {
+    background: #2980b9;
+    position: relative;
+    left: 1000px;
+    bottom: 104px;
+}
+
+.addbtn {
+    background: #2980b9;
+    position: relative;
+    bottom: 158px;
+    left: 861px;
+}
+
+.viewbtn {
+    background: #2980b9;
+    /*border-radius: 15px;*/
+    position: relative;
+    left: 735px;
+    bottom: 70px;
+}
+
+
+
+.filter {
+    position: relative;
+    left: 400px;
+    bottom: 56px;
+}
+
+.optionbtn {
+    background: white;
+    color: black;
+    border: none;
+    /*border-radius: 15px;*/
+    position: relative;
+    left: 16px;
+}
+
+.searchbar {
+    position: relative;
+    top: 30px;
+}
+
+.pages {
+    position: relative;
+    bottom: 80px;
+}
+
+.table-hover tbody tr:hover td {
+    background-color: lightgrey;
+}
+
+.table-hover tbody tr:hover th {
+    background-color: #2980b9;
+}
+
+.table-hover tbody tr:hover a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.submitbtn {
+    background: #2980b9;
+    /*border-radius: 15px;*/
+    position: relative;
+    border: none;
+    bottom: 34px;
+    left: 290px;
+}
+
+select::-ms-expand { /*To remove the arrow from the drop down of edit , delete and details*/
+    display: none;
+}
+
+.userdetails {
+    position: relative;
+    left: 780px;
+    border-radius: 20px;
+    top: 10px;
+    background: white;
+}
+
+.pagination {
+    display: inline-block;
+    position: relative;
+    bottom: 110px;
+}
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 6px 10px;
+        margin: 2px;
+        text-decoration: none;
+        transition: background-color .3s;
+        border: 1px solid #ddd;
+    }
+
+        .pagination a.active {
+            background-color: #2980b9;
+            color: white;
+            border: 1px solid lavender;
+            /*border-radius: 20px;*/
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+.dbtn a:hover {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.label1 {
+    position: relative;
+    right: 230px;
+    top: 30px;
+}
+
+.label2 {
+    position: relative;
+    right: 200px;
+    top: 30px;
+}

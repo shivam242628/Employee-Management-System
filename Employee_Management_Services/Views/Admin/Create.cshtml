@@ -1,0 +1,146 @@
+﻿@model DataObjects.Employee
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/EMS_StyleSheet.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $(function () {
+        $(".datefield").datepicker({ dateFormat: 'dd-M-yy', changeYear: true, changeMonth: true });
+        $(".datefield").addClass("form-control");
+    });
+    
+
+</script>
+
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+    <div class="container">
+        <div class="navbar-header">
+
+            @Html.ActionLink("ORION EMS TECHNOLOGIES", "Index", "Admin", new { area = "", userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @class = "navbar-brand", @style = "color:white;" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <div class="nav navbar-nav">
+
+
+                <a href="/Admin/UserAccountInfo?id=@Session[" AdminSecurity"]&organisationID=@Session["Organisation"]" class="userdetails  btn "><span class="glyphicon glyphicon-user"></span></a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { name = "form1", id = "form1" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h2>Add New Employee</h2>
+        <hr />
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.Label("FULL NAME", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("DOB", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 ">
+                @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("GENDER", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select name="gender" class="dropdown1 form-control">
+                    <option value="MALE">MALE</option>
+                    <option value="FEMALE">FEMALE</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("JOINING DATE", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Joining_Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Joining_Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("DESIGNATION", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 ">
+                <select name="department" class="dropdown1 form-control">
+                    <option value="ENGINEERING">ENGINEERING</option>
+                    <option value="SALES">SALES</option>
+                    <option value="SUCCESS">SUCCESS</option>
+                    <option value="SUPPORT">SUPPORT</option>
+                </select>
+
+
+                @Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("EMAIL ID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("CONTACT NUMBER", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Contact_Number, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Contact_Number, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("PASSWORD", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type = "password", @name = "password1", @id = "password" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("CONFIRM PASSWORD", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @type = "password", @name = "password2" } })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-info submitbtn" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @class = "submitbtn btn btn-info back back1" })
+</div>
+
+
+

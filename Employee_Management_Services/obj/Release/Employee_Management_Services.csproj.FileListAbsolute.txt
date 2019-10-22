@@ -1,0 +1,134 @@
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\ApplicationInsights.config
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\csc.exe
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\vbc.exe
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\VBCSCompiler.exe
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Employee_Management_Services.dll.config
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Employee_Management_Services.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Employee_Management_Services.pdb
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Antlr3.Runtime.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\log4net.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.Web.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.ApplicationInsights.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\MySql.Data.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Newtonsoft.Json.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\PagedList.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\PagedList.Mvc.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Net.Http.Formatting.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Helpers.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Http.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Http.WebHost.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Mvc.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Optimization.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Razor.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.Deployment.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.Razor.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\WebGrease.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\log4net.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.Web.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.ApplicationInsights.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\MySql.Data.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\PagedList.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\PagedList.Mvc.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Newtonsoft.Json.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Net.Http.Formatting.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Helpers.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Http.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Http.WebHost.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Mvc.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Optimization.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Razor.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.Deployment.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.Razor.xml
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\bin\Antlr3.Runtime.pdb
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\obj\Release\Employee_Management_Services.dll
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\obj\Release\Employee_Management_Services.pdb
+C:\Users\admin\documents\visual studio 2015\Projects\Employee_Management_Services\Employee_Management_Services\obj\Release\Employee_Management_Services.csprojResolveAssemblyReference.cache
+D:\Employee_Management_Services\Employee_Management_Services\bin\ApplicationInsights.config
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\csc.exe
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\System.Collections.Immutable.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\System.Reflection.Metadata.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\vbc.exe
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\VBCSCompiler.exe
+D:\Employee_Management_Services\Employee_Management_Services\bin\roslyn\VBCSCompiler.exe.config
+D:\Employee_Management_Services\Employee_Management_Services\bin\Employee_Management_Services.dll.config
+D:\Employee_Management_Services\Employee_Management_Services\bin\Employee_Management_Services.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\Employee_Management_Services.pdb
+D:\Employee_Management_Services\Employee_Management_Services\bin\Antlr3.Runtime.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\log4net.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.DependencyCollector.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.Web.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.WindowsServer.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.ApplicationInsights.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.Web.Infrastructure.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\MySql.Data.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\Newtonsoft.Json.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\PagedList.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\PagedList.Mvc.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Net.Http.Formatting.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Helpers.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Http.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Http.WebHost.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Mvc.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Optimization.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Razor.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.Deployment.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.Razor.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\WebGrease.dll
+D:\Employee_Management_Services\Employee_Management_Services\bin\log4net.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.DependencyCollector.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.Web.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.AI.WindowsServer.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.ApplicationInsights.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\MySql.Data.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\PagedList.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\PagedList.Mvc.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\Newtonsoft.Json.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Net.Http.Formatting.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Helpers.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Http.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Http.WebHost.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Mvc.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Optimization.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.Razor.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.Deployment.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\System.Web.WebPages.Razor.xml
+D:\Employee_Management_Services\Employee_Management_Services\bin\Antlr3.Runtime.pdb
+D:\Employee_Management_Services\Employee_Management_Services\obj\Release\Employee_Management_Services.csprojResolveAssemblyReference.cache
+D:\Employee_Management_Services\Employee_Management_Services\obj\Release\Employee_Management_Services.dll
+D:\Employee_Management_Services\Employee_Management_Services\obj\Release\Employee_Management_Services.pdb

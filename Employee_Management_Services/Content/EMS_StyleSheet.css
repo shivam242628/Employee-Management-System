@@ -1,0 +1,407 @@
+﻿#general{
+    background-color: lightgrey;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+#employeelist{
+    background-color:ghostwhite;
+}
+#error {
+        margin: 0;
+        min-width: 100%;
+        min-height: 100%;
+        background: #505050;
+        font-family: Verdana;
+    }
+
+ #details {
+        width: 600px;
+        position: relative;
+        left: 270px;
+        top: 100px;
+        padding: 30px;
+        box-shadow: 1px 1px 30px #555;
+        border-radius: 10px;
+        text-align: center;
+        background-color: ghostwhite;
+    }
+
+    .userdetails {
+        position: relative;
+        left: 780px;
+        border-radius: 20px;
+        top: 10px;
+        background: white;
+    }
+
+    .loginpage {
+        width: 360px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .loginpage {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 100px 100px;
+        left: 280px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    #button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #2980b9;
+        margin: 0 0 15px;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        text-align: center;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0 ease;
+        transition: all ease;
+        cursor: pointer;
+    }
+
+        #button:hover, .form button:active, .form button:focus {
+            background: #43A047;
+        }
+
+        .form empinput, #passinput {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }  
+    
+    .status{
+        color:red;
+    }
+
+    
+    .addbtnadmin {
+        background: #2980b9;
+        position: relative;
+        bottom: 144px;
+        left: 1000px;
+    }
+ 
+    .addbtn {
+        background: #2980b9;
+        position: relative;
+        top:20px;
+        left: 2px;
+    }
+
+   #dl-horizontal, .dt {                
+        position: relative;
+        line-height: 200%;
+    }
+
+   .list{
+       position:relative;
+       bottom:100px;
+   }
+
+   .optionbtn {
+        background: white;
+        color: black;
+        border: none;
+        position: relative;
+        left: 16px;
+    }
+
+   .searchbar {
+        position: relative;
+        top: 30px;
+    }
+
+   .submitbtnadmin {
+        background: #2980b9;
+        position: relative;
+        border: none;
+        bottom: 34px;
+        left: 290px;
+    }
+
+   .filteremployee {
+        position: relative;
+        left: 300px;
+        bottom: 20px;
+    }
+
+   .removefilterbtn {
+        background: #2980b9;
+        position: relative;
+        left: 1010px;
+        bottom: 110px;
+    }
+
+    .submitbtnemployee {
+        background: #2980b9;
+        position: relative;
+        border: none;
+        bottom: 1px;
+        left: 287px;
+        bottom: 33px;
+    }
+
+    
+    .label{
+        position: relative;
+        right: 230px;
+        top: 30px;
+    }
+
+   
+    .filterlabels {
+        position: relative;
+        bottom: 36px;
+        left: 85px;
+    }
+
+    .filter {
+        position: relative;
+        left: 400px;
+        bottom: 56px;
+    }
+
+    .filters {
+        position: relative;
+        left: 100px;
+        bottom: 36px;
+    }
+
+
+     table {
+        background-color: #fff;
+        background: darkslategrey;
+        color: #161616;
+        text-align: left;
+        vertical-align: central;
+        position: relative;
+        bottom: 65px;
+    }
+
+    th {
+        background: #2980b9;
+    }
+
+        th a {
+            color: #fff;
+        }
+
+    tr {
+        background: #fff;
+        font-size: 13px;
+    }
+
+    .table-bordered {
+        color:darkslategray;
+    }
+
+    .table td a:hover {
+        color: blue !important;
+        text-decoration: none !important;
+    }
+
+    .table-hover tbody tr:hover td {
+        background-color: lightgrey;
+    }
+
+    .table-hover tbody tr:hover th {
+        background-color: #2980b9;
+    }
+
+    .table-hover tbody tr:hover a:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+    select::-ms-expand { /*To remove the arrow from the drop down of edit , delete and details*/
+        display: none;
+    }
+
+    .pagination {
+        display: inline-block;
+        position: relative;
+        bottom: 100px;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 6px 10px;
+            margin: 2px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+        }
+
+            .pagination a.active {
+                background-color: #2980b9;
+                color: white;
+                border: 1px solid lavender;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #ddd;
+            }
+
+   .details {
+        width: 600px;
+        position: relative;
+        left: 270px;
+        top: 100px;
+        padding: 30px;
+        box-shadow: 1px 1px 30px #555;
+        border-radius: 10px;
+    }
+
+    .menubtn {
+        background: #2980b9;
+        position: relative;
+        left: 258px;
+        bottom: 49px;
+    }
+
+    .details, .dl-horizontal, .dt {
+        background-color: ghostwhite;
+        text-align: center;
+        position: relative;
+        line-height: 200%;
+    }
+
+  .dl-horizontal dt {
+      position: relative;
+      line-height: 200%;
+      left: 100px;
+  }
+
+   .dl-horizontal dd {
+       text-align: left;
+       position: relative;
+       line-height: 200%;
+       left: 100px;
+   }
+
+    p .viewbtn {
+       background-color: #2980b9;
+    }
+
+    .viewbtnadmin {
+        background: #2980b9;
+        position: relative;
+        left: 870px;
+        bottom: 90px;
+    }
+
+     .viewbtn a {
+       color: white;
+    }
+
+     .viewbtn a:hover {
+       color: white;
+       text-decoration: none;
+    }
+
+     .back {
+        position: relative;
+        left: 255px;
+        bottom: 49px;
+    }
+
+     .back1{
+         position: relative;
+         left:268px;
+     }
+    
+
+    .submitbtn {
+        background: #2980b9;
+        position: relative;
+    }
+
+    .tableorganisations{
+        position:relative;
+        top:60px;
+    }
+
+    .tableorganisations th{
+        color:white;
+    }
+
+    
+    .dropdown1 {
+        min-width: 278px;
+    }
+
+.X {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 55px;
+        height: 250px;
+        background: red;
+        transform: translate(50%, 50%);
+    }
+
+ .X#X1 {
+     transform: rotate(45deg);
+ }
+
+  .X#X2 {
+      transform: rotate(-45deg);
+  }
+
+ .error-number {
+     position: absolute;
+     line-height: 80px;
+     top: 85px;
+     left: 0;
+     right: 0;
+     margin: 0 auto;
+     width: 80px;
+     height: 80px;
+     color: white;
+     font-size: 30px;
+     text-align: center;
+     font-weight: bold;
+     background: rgba(0,0,0,0.4);
+     border-radius: 100px;
+ }
+
+  .error-info {
+      position: absolute;
+      top: 300px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 300px;
+      color: white;
+      font-size: 22px;
+      text-align: center;
+  }
+
+   .errormsg {
+        color: red;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }

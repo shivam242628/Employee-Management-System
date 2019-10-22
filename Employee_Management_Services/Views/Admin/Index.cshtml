@@ -1,0 +1,320 @@
+﻿@model DataObjects.EmployeePagedModel
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/EMS_StyleSheet.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/EMS_Scripts.js"></script>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+</head>
+
+<script>
+    $(document).ready(function () {
+        $(".viewbtnadmin").hide();
+        var x = '@ViewBag.viewall';
+        if (x == "no") {
+
+        }
+        else {
+            $(".viewbtnadmin").show();
+        }
+    })
+
+    $(document).ready(function () {
+        $(".addbtnadmin").hide();
+        var x = '@Session["Organisation"]';
+        if (x == "0") {
+
+        }
+        else {
+            $(".addbtnadmin").show();
+        }
+    })
+
+    $(document).ready(function () {
+        $(".fa1").hide();
+
+        var x = '@TempData["sorting"]';
+        if (x == "") {
+            $("#eidasc").show();
+        }
+        if (x == "orgid") {
+            $("#orgidasc").show();
+        }
+        if (x == "orgid_desc") {
+            $("#orgiddesc").show();
+        }
+        if (x == "eid") {
+            $("#eidasc").show();
+        }
+        if (x == "eid_desc") {
+            $("#eiddesc").show();
+        }
+        if (x == "name") {
+            $("#nameasc").show();
+        }
+        if (x == "name_desc") {
+            $("#namedesc").show();
+        }
+        if (x == "Date") {
+            $("#dobasc").show();
+        }
+        if (x == "date_desc") {
+            $("#dobdesc").show();
+        }
+        if (x == "gender") {
+            $("#genderasc").show();
+        }
+        if (x == "gender_desc") {
+            $("#genderdesc").show();
+        }
+        if (x == "JoinDate") {
+            $("#joiningasc").show();
+        }
+        if (x == "join_date_desc") {
+            $("#joiningdesc").show();
+        }
+        if (x == "dept") {
+            $("#deptasc").show();
+        }
+        if (x == "dept_desc") {
+            $("#deptdesc").show();
+        }
+        if (x == "email") {
+            $("#emailasc").show();
+        }
+        if (x == "email_desc") {
+            $("#emaildesc").show();
+        }
+        if (x == "contact") {
+            $("#contactasc").show();
+        }
+        if (x == "contact_desc") {
+            $("#contactdesc").show();
+        }
+    })
+
+    function PagerClick(pageNumber) {
+        var sortorder = '@TempData["sorting"]';
+        var genderSelectedValue = '@TempData["genderfilter"]';
+        var webApiBasedUrl = '@System.Configuration.ConfigurationManager.AppSettings["LocalUrl"].ToString()';
+        var searchstring = '@TempData["searchstring"]';
+        var DepartmentSelectedValue = '@TempData["departmentfilter"]';
+        if (genderSelectedValue == "undefined")
+            genderSelectedValue = "";
+        if (DepartmentSelectedValue == "undefined")
+            DepartmentSelectedValue = "";
+        var string_url = webApiBasedUrl + "Admin/Index?page=" + pageNumber + "&searchString=" + searchstring + "&sortOrder=" + sortorder + "&departmentfilter=" + DepartmentSelectedValue + "&genderfilter=" + genderSelectedValue + "&userName=" + '@Session["AdminSecurity"]' + "&organisationID=" + '@Session["Organisation"]';
+        window.location = string_url;
+    }
+</script>
+
+<body id="employeelist">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+        <div class="container">
+            <div class="navbar-header">
+
+                @Html.ActionLink("ORION EMS TECHNOLOGIES", "Index", "Admin", new { area = "", userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @class = "navbar-brand", @style = "color:white;" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="nav navbar-nav">
+
+
+                    <a href="/Admin/UserAccountInfo?id=@Session["AdminSecurity"]&organisationID=@Session["Organisation"]" class="userdetails  btn "><span class="glyphicon glyphicon-user"></span></a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <form method="get" action="/Admin/Index" class="searchbar">
+        <input type="hidden" name="userName" value=@Session["AdminSecurity"]>
+        <input type="hidden" name="organisationID" value=@Session["Organisation"]>
+        <input type="text" name="searchString" placeholder="Search..." class="form-control" required />
+        <input type="submit" class="submitbtnadmin btn btn-info " value="Search" style="background:#2980b9;"/>
+    </form>
+
+    <br />
+    <div class="filter">
+        <form style="display:none" action="/Admin/Index" method="post" id="filterform">
+            <input type="hidden" name="userName" value=@Session["AdminSecurity"]>
+            <input type="hidden" name="organisationID" value=@Session["Organisation"]>
+            <input type="hidden" name="searchString" id="searchString" value="@ViewBag.CurrentFilter" />
+            <input type="hidden" name="departmentfilter" id="department" value="" />
+            <input type="hidden" name="genderfilter" id="gender" value="" />
+        </form>
+
+        <select class="form-control " style="border:solid;border-width:2px;border-color:lightgrey;width:100px;border-radius:0px;display:inline-block" onchange="genderfunc();" id="Genderselect">
+            <option value="">Gender</option>
+            <option value="MALE">MALE</option>
+            <option value="FEMALE">FEMALE</option>
+        </select>
+
+        <select class="form-control" style="border:solid;border-width:2px;border-color:lightgrey;width:130px;border-radius:0px;display:inline-block" onchange="departmentfunc();" id="Departmentselect">
+            <option value="">Department</option>
+            <option value="ENGINEERING">ENGINEERING</option>
+            <option value="SALES">SALES</option>
+            <option value="SUCCESS">SUCCESS</option>
+            <option value="SUPPORT">SUPPORT</option>
+        </select>
+        &nbsp; &nbsp;
+        <label id="genderlabel" style="color:black;background-color:lavender" class="label">@ViewBag.genderfilter</label>   <i style="color:black;background-color:lavender;position:relative;top:2px" id="cleargender" class="material-icons"></i>
+        &nbsp; &nbsp;
+        <label id="departmentlabel" style="color:black;background-color:lavender" class="label">@ViewBag.departmentfilter</label>   <i style="color:black;background-color:lavender;position:relative;top:2px" id="cleardepartment" class="material-icons"></i><br />
+
+    </div>
+
+
+    @Html.ActionLink("Remove Filters", "Index", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @style = "background:#2980b9;", @class = "btn btn-info  viewbtnadmin" })
+    <br />
+    <br />
+    <a href="/Admin/Create?userName=@Session["AdminSecurity"]&organisationID=@Session["Organisation"]" class="btn btn-info addbtnadmin" style="background:#2980b9;">
+        <span class="glyphicon glyphicon-plus"></span> Add Employee
+    </a>
+
+    <br />
+    <table class="table table-responsive table-hover table-bordered list">
+        <tr style="color: #fff ">
+
+            <th>
+                @Html.ActionLink("ORGANISATION ID", "Index", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm6, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+                <i id="orgidasc" class="fa fa1 fa-angle-down"></i>
+                <i id="orgiddesc" class="fa fa1 fa-angle-up"></i>
+            </th>
+
+            <th>
+                @Html.ActionLink("EMPLOYEE ID", "Index", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm0, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+                <i id="eidasc" class="fa fa1 fa-angle-down"></i>
+                <i id="eiddesc" class="fa fa1 fa-angle-up"></i>
+            </th>
+            <th>
+                @Html.ActionLink("NAME", "Index", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm1, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+                <i id="nameasc" class="fa fa1 fa-angle-down"></i>
+                <i id="namedesc" class="fa fa1 fa-angle-up"></i>
+            </th>
+
+            <th>
+                @Html.ActionLink("GENDER", "Index", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm2, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+                <i id="genderasc" class="fa fa1 fa-angle-down"></i>
+                <i id="genderdesc" class="fa fa1 fa-angle-up"></i>
+            </th>
+            <th>
+                @Html.ActionLink("JOINING DATE", "Index", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.DateSortParm2, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+                <i id="joiningasc" class="fa fa1 fa-angle-down"></i>
+                <i id="joiningdesc" class="fa fa1 fa-angle-up"></i>
+            </th>
+            <th>
+                @Html.ActionLink("DEPARTMENT", "Index", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm3, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+                <i id="deptasc" class="fa fa1 fa-angle-down"></i>
+                <i id="deptdesc" class="fa fa1 fa-angle-up"></i>
+            </th>
+            <th>
+                @Html.ActionLink("EMAIL ID", "Index", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm4, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+                <i id="emailasc" class="fa fa1 fa-angle-down"></i>
+                <i id="emaildesc" class="fa fa1 fa-angle-up"></i>
+            </th>
+
+            <th>
+                @Html.ActionLink("STATUS", "Index", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"], searchstring = ViewBag.CurrentFilter, sortOrder = ViewBag.NameSortParm5, departmentfilter = ViewBag.departmentfilter, genderfilter = ViewBag.genderfilter })
+                <i id="contactasc" class="fa fa1 fa-angle-down"></i>
+                <i id="contactdesc" class="fa fa1 fa-angle-up"></i>
+            </th>
+
+            <th>
+                OPTIONS
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model.Employees)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrganisationId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Joining_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td class="status">
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+
+                <td>
+
+
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle glyphicon glyphicon-cog optionbtn" type="button" data-toggle="dropdown"></button>
+                        <ul class="dropdown-menu">
+                            <li class="dbtn">@Html.ActionLink("Edit", "Edit", new { id = item.Employee_Id, username = Session["AdminSecurity"], organisationID = item.OrganisationId })</li>
+                            <li class="dbtn">@Html.ActionLink("Details", "Details", new { id = item.Employee_Id, username = Session["AdminSecurity"], organisationID = item.OrganisationId })</li>
+                            <li class="dbtn">@Html.ActionLink("De-activate Employee", "ChangeStatus", new { id = item.Employee_Id, username = Session["AdminSecurity"], organisationID = item.OrganisationId })</li>
+                        </ul>
+                    </div>
+                </td>
+
+            </tr>
+
+        }
+
+    </table>
+
+    <br />
+
+    <div class="pagination">
+        @if (int.Parse(TempData["CurrentPage"].ToString()) > 1)
+        {
+            <a href="javascript:PagerClick(@TempData["CurrentPage"]-1);">&laquo;</a>
+        }
+        @for (int i = 1; i <= Model.PageCount; i++)
+        {
+            if (i != Model.PageNumber)
+            {
+                <a class="active" href="javascript:PagerClick(@i);">@i</a>
+            }
+            else
+            {
+                <span>@i</span>
+            }
+
+        }
+        @if (int.Parse((TempData["CurrentPage"]).ToString()) < Model.PageCount)
+        {
+            <a href="javascript:PagerClick(@TempData["CurrentPage"] + 1);">&raquo;</a>
+        }
+
+    </div>
+
+</body>

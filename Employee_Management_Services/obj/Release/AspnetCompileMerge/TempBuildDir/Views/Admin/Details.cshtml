@@ -1,0 +1,109 @@
+﻿@model Employee_Management_Services.Models.Employee
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/Content/Details_Admin.css" rel="stylesheet" type="text/css" />
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+    <div class="container">
+        <div class="navbar-header">
+
+            @Html.ActionLink("Employee Management System", "Index", "Employee", new { area = "" }, new { @class = "navbar-brand", id = Session["AdminSecurity"], @style = "color:white;" })
+
+
+
+            <div class="nav navbar-nav">
+
+                <a href="/Admin/UserAccountInfo/@Session["AdminSecurity"]" class="userdetails  btn "><span class="glyphicon glyphicon-user"></span></a>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="details">
+    <h3><b>Employee Details</b></h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>EMPLOYEE ID:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Id)
+        </dd>
+
+        <dt>
+            <b>FULL NAME:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            <b>DOB:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            <b>GENDER:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            <b>JOINING DATE:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Joining_Date)
+        </dd>
+
+        <dt>
+            <b>DEPARTMENT:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+
+        <dt>
+            <b>EMAIL ID:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            <b>CONTACT NUMBER:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact_Number)
+        </dd>
+
+
+
+
+    </dl>
+    <p>
+        <button class="btn btn-info  viewbtn ">@Html.ActionLink("Edit", "Edit", new { id = Model.Employee_Id })</button>
+        <button class="btn btn-info  viewbtn ">@Html.ActionLink("Delete", "Delete", new { id = Model.Employee_Id })</button>
+        <button class="btn btn-info  viewbtn ">@Html.ActionLink("Back to List", "Index")</button>
+    </p>
+</div>
+
+
+

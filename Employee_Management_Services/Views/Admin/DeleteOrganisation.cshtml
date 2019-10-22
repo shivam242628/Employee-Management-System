@@ -1,0 +1,43 @@
+﻿@model DataObjects.Admin
+
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/EMS_StyleSheet.css" rel="stylesheet" type="text/css" />
+
+<body id="general">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+        <div class="container">
+            <div class="navbar-header">
+
+                @Html.ActionLink("ORION EMS TECHNOLOGIES", "Index", "Admin", new { area = "", userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @class = "navbar-brand", @style = "color:white;" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="nav navbar-nav">
+
+
+                    <a href="/Admin/UserAccountInfo?id=@Session["AdminSecurity"]&organisationID=@Session["Organisation"]" class="userdetails  btn "><span class="glyphicon glyphicon-user"></span></a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="details">
+
+        <hr />
+
+        <h4>All the employees associated with <b>@TempData["OrganisationName"]</b> will be lost forever. Do you still want to continue?</h4>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete Anyway" class="btn btn-info submitbtn" />
+                @Html.ActionLink("Back to Organisations", "ViewOrganisations", new { userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @class = "btn btn-info submitbtn" })
+
+            </div>
+        }
+    </div>
+</body>

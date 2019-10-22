@@ -1,0 +1,48 @@
+﻿body {
+    background-color: lightgrey;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.main {
+    background-color: ghostwhite;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    width: 500px;
+    left: 330px;
+    top: 200px;
+    box-shadow: 1px 1px 30px #555;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+.viewbtn {
+    background: white;
+    border: grey;
+}
+
+h4 {
+    line-height: 150%;
+}
+
+.userdetails {
+    position: relative;
+    left: 780px;
+    border-radius: 20px;
+    top: 10px;
+    background: white;
+}
+
+.submitbtn {
+    background: #2980b9;
+}
+
+    .submitbtn a {
+        color: white;
+    }
+
+        .submitbtn a:hover {
+            color: white;
+            text-decoration: none;
+        }

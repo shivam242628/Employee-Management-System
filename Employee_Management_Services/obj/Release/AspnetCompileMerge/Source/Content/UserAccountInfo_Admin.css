@@ -1,0 +1,57 @@
+﻿body {
+    background-color: lightgrey;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    border: none;
+}
+
+.details {
+    width: 600px;
+    position: relative;
+    left: 270px;
+    top: 100px;
+    padding: 30px;
+    box-shadow: 1px 1px 30px #555;
+    border-radius: 10px;
+}
+
+.details, .dl-horizontal, .dt {
+    background-color: ghostwhite;
+    text-align: center;
+    position: relative;
+    line-height: 200%;
+}
+
+    .dl-horizontal dt {
+        position: relative;
+        line-height: 200%;
+        left: 100px;
+    }
+
+    .dl-horizontal dd {
+        text-align: left;
+        position: relative;
+        line-height: 200%;
+        left: 100px;
+    }
+
+.viewbtn {
+    background: #2980b9;
+}
+
+    .viewbtn a {
+        color: white;
+    }
+
+        .viewbtn a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+.userdetails {
+    position: relative;
+    left: 780px;
+    border-radius: 20px;
+    top: 10px;
+    background: white;
+}

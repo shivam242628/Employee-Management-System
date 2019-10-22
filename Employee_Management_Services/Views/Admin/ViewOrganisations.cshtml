@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DataObjects.Admin>
+<link href="~/Content/EMS_StyleSheet.css" rel="stylesheet" type="text/css" />
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+    <div class="container">
+        <div class="navbar-header">
+
+            @Html.ActionLink("ORION EMS TECHNOLOGIES", "Index", "Admin", new { area = "", userName = Session["AdminSecurity"], organisationID = Session["Organisation"] }, new { @class = "navbar-brand", @style = "color:white;" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <div class="nav navbar-nav">
+
+
+                <a href="/Admin/UserAccountInfo?id=@Session["AdminSecurity"]&organisationID=@Session["Organisation"]" class="userdetails  btn "><span class="glyphicon glyphicon-user"></span></a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<a href="/Admin/AddAdmin?userName=@Session["AdminSecurity"]&organisationID=@Session["Organisation"]" class="btn btn-info addbtn">
+    <span class="glyphicon glyphicon-plus"></span> Add Organisation
+</a>
+
+<a href="/Admin/Index?userName=@Session["AdminSecurity"]&organisationID=@Session["Organisation"]" class="btn btn-info addbtn">
+    <span class="glyphicon glyphicon-user"></span> View All Employees
+</a>
+
+<table class="table table-responsive table-hover table-bordered tableorganisations">
+    <tr>        
+        <th>
+            @Html.DisplayName("Organisation ID")
+        </th>
+        <th>
+            @Html.DisplayName("Organisation Name")
+        </th>
+        <th>
+            @Html.DisplayName("Organisation Address")
+        </th>
+        <th>
+            @Html.DisplayName("Organisation Email")
+        </th>
+        <th>
+            OPTIONS
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>        
+        <td>
+            @Html.DisplayFor(modelItem => item.OrganisationID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrganisationName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrganisationAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminEmail)
+        </td>
+        <td>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle glyphicon glyphicon-cog optionbtn" type="button" data-toggle="dropdown"></button>
+                <ul class="dropdown-menu">
+                    <li class="dbtn">@Html.ActionLink("Delete Organisation", "DeleteOrganisation", new { organisation = item.OrganisationID,organisationName=item.OrganisationName, username = Session["AdminSecurity"], organisationID = Session["Organisation"] })</li>
+                </ul>
+            </div>
+        </td>
+        
+    </tr>
+}
+
+</table>

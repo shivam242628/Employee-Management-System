@@ -1,0 +1,44 @@
+﻿@model Employee_Management_Services.Models.Employee
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/Content/UserAccountInfo_Employee.css" rel="stylesheet" type="text/css" />
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+    <div class="container" style="color:white;">
+        <div class="navbar-header" style="color:white">
+
+            @Html.ActionLink("Employee Management System", "Index", "Employee", new { area = "", id = Session["UserID"] }, new { @class = "navbar-brand", @style = "color:white;" })
+        </div>
+        <div class="nav navbar-nav">
+            <a href="/Employee/UserAccountInfo/@Session["UserID"]" id=@Session["UserID"] class="userdetails  btn "><span class="glyphicon glyphicon-user"></span></a>
+        </div>
+    </div>
+</div>
+
+<div class="details">
+    <h3><b>Welcome  @Html.DisplayFor(model => model.Name) !</b></h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>EMPLOYEE ID:</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Id)
+        </dd>
+
+    </dl>
+    <p>
+
+        <button class="btn btn-info  viewbtn ">@Html.ActionLink("Back to List", "Index",new { id = Session["UserID"] })</button>
+        <button class="btn btn-info  viewbtn ">@Html.ActionLink("Edit Profile", "Edit", new { id = Model.Employee_Id , user = Session["UserID"] })</button>
+        <button class="btn btn-info  viewbtn ">@Html.ActionLink("Logout", "SignOut")</button>
+    </p>
+</div>
+
+

@@ -1,0 +1,13 @@
+D:\Employee_Management_Services\ModelLayer\bin\Release\ModelLayer.dll
+D:\Employee_Management_Services\ModelLayer\bin\Release\ModelLayer.pdb
+D:\Employee_Management_Services\ModelLayer\bin\Release\log4net.dll
+D:\Employee_Management_Services\ModelLayer\bin\Release\Newtonsoft.Json.dll
+D:\Employee_Management_Services\ModelLayer\bin\Release\log4net.xml
+D:\Employee_Management_Services\ModelLayer\bin\Release\Newtonsoft.Json.xml
+D:\Employee_Management_Services\ModelLayer\obj\Release\ModelLayer.dll
+D:\Employee_Management_Services\ModelLayer\obj\Release\ModelLayer.pdb
+D:\Employee_Management_Services\ModelLayer\bin\Release\PagedList.dll
+D:\Employee_Management_Services\ModelLayer\bin\Release\PagedList.Mvc.dll
+D:\Employee_Management_Services\ModelLayer\bin\Release\PagedList.xml
+D:\Employee_Management_Services\ModelLayer\bin\Release\PagedList.Mvc.xml
+D:\Employee_Management_Services\ModelLayer\obj\Release\EMS.DataObjects.csprojResolveAssemblyReference.cache

@@ -1,0 +1,39 @@
+﻿
+@model Employee_Management_Services.Models.Employee
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<link href="~/Content/Success_Employee.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980b9">
+    <div class="container" style="color:white;">
+        <div class="navbar-header" style="color:white">
+
+            @Html.ActionLink("Employee Management System", "Index", "Employee", new { area = "", id = Session["UserID"] }, new { @class = "navbar-brand", @style = "color:white;" })
+        </div>
+        
+    </div>
+</div>
+
+
+@using (Html.BeginForm("Login", "Admin"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal details">
+        
+       
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <h3>You have registered successfully. Please login with employee ID : @ViewBag.id</h3>
+        </div>
+        <button class="btn btn-info  viewbtn ">@Html.ActionLink("Login", "Index")</button>
+    </div>
+}
+
+
